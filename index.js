@@ -15,6 +15,10 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRouter);
 
+app.get("/", (req, res) => {
+  res.json({ hello: "hi" });
+});
+
 const CONNECTION_URL =
   "mongodb+srv://Administrator:sC23knuozELwrzaL@member-data.o3qrvx6.mongodb.net/?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
