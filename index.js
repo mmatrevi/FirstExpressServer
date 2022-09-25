@@ -12,12 +12,12 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use("/posts", postRoutes);
-app.use("/user", userRouter);
-
 app.get("/", (req, res) => {
   res.json({ hello: "hi" });
 });
+
+app.use("/posts", postRoutes);
+app.use("/user", userRouter);
 
 const CONNECTION_URL =
   "mongodb+srv://Administrator:sC23knuozELwrzaL@member-data.o3qrvx6.mongodb.net/?retryWrites=true&w=majority";
